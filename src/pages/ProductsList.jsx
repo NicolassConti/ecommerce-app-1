@@ -74,6 +74,7 @@ const ProductsList = () => {
                                     style={{ height: 200, objectFit: "contain", paddingTop: "1rem", cursor : "pointer" }}
                                     src={newsItem.images?.[0].url} alt="producto"
                                 />
+                                <hr />
                                 <Card.Body className='card-body'>
                                     <Card.Title >{newsItem.title}</Card.Title>
                                     <div className='container-car-price'>
