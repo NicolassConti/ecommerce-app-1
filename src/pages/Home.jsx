@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { filterProductHeadlineThunk, getProductThunk } from "../store/slices/product.slice";
 import { filterProductCategoryThunk } from "../store/slices/product.slice";
 
+
+
 const Home = () => {
 
     const dispatch = useDispatch();
@@ -27,12 +29,14 @@ const Home = () => {
     return (
         <div>
             <Row>
-                <Col lg={3}>
-                    <ListGroup>
+                <Col lg={3} >
+                    <ListGroup className="list-group" >
+                        <h1 style={{ fontSize: 20 }}>Category <hr /></h1 >
+                        
                         {
                             categories.map((category) => (
                                 <ListGroup.Item key={category.id}
-                                    onClick={() => dispatch(filterProductCategoryThunk(category.id))} style={{ cursor: "pointer" }}>{category.name}
+                                    onClick={() => dispatch(filterProductCategoryThunk(category.id))} style={{ cursor: "pointer", justifyContent: "end" }}>{category.name}
 
                                 </ListGroup.Item>
                             ))
@@ -40,38 +44,51 @@ const Home = () => {
                     </ListGroup>
                 </Col>
                 <Col lg={9}>
-                    <h1>Home</h1>
+                    <br />
                     <InputGroup className="mb-3">
                         <Form.Control
-                            placeholder="Recipient's username"
+                            placeholder="Search Products"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                             value={productSearch} onChange={e => setProductSearch(e.target.value)}
                         />
                         <Button
                             onClick={() => dispatch(filterProductHeadlineThunk(productSearch))} variant="outline-secondary" id="button-addon2">
-                            Button
+                            Search
                         </Button>
                     </InputGroup>
-                    <ul>
-                        <Row xs={1} md={2} className="g-4">
-                            {productList.map((product) => (
-                                <li key={product.id} onClick={() => navigate(`/product/${product.id}`)}>
-                                    <Col>
-                                        <Card >
-                                            <Card.Img className="img-product" variant="top" src={product.images[0]?.url} style={{ width: 300 , height: 300 , objectFit: "contain" }}  />
-                                            <Card.Body>
-                                                <Card.Title>{product.title}</Card.Title>
-                                                <Card.Text>
 
+                    <Row xs={1} md={2} lg={3} className="g-4">
+
+                        {productList.map(product => (
+
+                            <Col key={product.id}>
+                                <Card key={product.id} onClick={() => navigate(`/product/${product.id}`)}>
+                                    <Card.Img className="g-3"
+                                        variant="top"
+                                        style={{ height: 200, objectFit: "contain", paddingTop: "1rem", cursor : "pointer" }}
+                                        src={product.images?.[0].url} alt="producto"
+                                    />
+                                    <hr />
+                                    <Card.Body className='card-body'>
+                                        <Card.Text>{product.brand}</Card.Text>
+                                        <Card.Title>{product.title}</Card.Title>
+                                        <div className='container-car-price'>
+                                            <div>
+                                                <Card.Text>
+                                                    <b> Price: $ </b>{product.price}
                                                 </Card.Text>
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                </li>
-                            ))}
-                        </Row>
-                    </ul>
+                                            </div>
+                                            <div className='car-container'>
+                                                <i className='bx bxs-cart'></i>
+                                            </div>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+
+                        ))}
+                    </Row>
                 </Col>
             </Row>
         </div>
@@ -79,3 +96,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

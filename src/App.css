@@ -1,0 +1,83 @@
+.container-image img{
+    background-color: aliceblue;
+    padding: 2rem;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+  }
+  .card-body {
+    background-color: white;
+    height: 12rem;
+   
+ }
+
+  .car-container i {
+    position: relative;
+    bottom: -6px;
+    
+  }
+  
+  .car-container {
+    background: rgb(235, 80, 80);
+    border-radius: 40%;
+    bottom: 20px;
+    color: #fff;
+    height: 50px;
+    line-height: 0;
+    position: absolute;
+    right: 30px;
+    width: 50px;
+    font-size: 35px;
+    text-align: center;
+    
+    
+  }
+
+  .button-input{
+    background-color: rgb(243, 105, 105);
+    border: solid 1px;
+    border-radius: 2px;
+    margin-top: 10px;
+  }
+
+  .car-container:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .container-car-prices {
+    display: flex;
+    justify-content: space-between;
+    bottom: 2rem;
+  }
+  .container-superior{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6rem;
+    padding-bottom: 3rem;
+    
+  }
+  .container-image-description img{
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+  }
+
+  .container-image-description:hover{
+    transform: scale(1.1);
+    transition: 1s;
+  }
+  .p{
+   width: 500px;
+  
+  }
+  .container-image-description{
+    width: 28rem;
+    height: 23rem;
+ }
+ 
+ .card-img-top:hover{
+    transform: scale(1.15);
+    transition: 1s;
+    
+    
+ }
