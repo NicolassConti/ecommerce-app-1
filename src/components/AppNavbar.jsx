@@ -20,8 +20,8 @@ const AppNavbar = () => {
   return (
     <>
       <Navbar expand="lg" variant="dark" bg="primary">
-          <Navbar.Brand as={Link} to="/" style={{ fontSize: 25, marginLeft: 20 }}>E-commerce</Navbar.Brand>
-        <Container style={{marginLeft: 1150 }}>
+        <Container >
+          <Navbar.Brand as={Link} to="/" style={{ fontSize: 25 }}>E-commerce</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
