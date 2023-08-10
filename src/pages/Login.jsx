@@ -30,7 +30,7 @@ const Login = () => {
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                     type="email"
-                    placeholder="Enter email"
+                    placeholder="john@gmail.com"
                     {...register("email")}
                 />
                 <Form.Text className="text-muted">
@@ -42,7 +42,7 @@ const Login = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                     type="password"
-                    placeholder="Password"
+                    placeholder="john1234"
                     {...register("password")}
                 />
             </Form.Group>
